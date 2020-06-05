@@ -22,7 +22,7 @@ def wishMe():   #this will wish me according to datetime module
     elif hour>=18 and hour<=24:
         speak("Good Night")
     
-    speak("i am najiyaa sir, how may i help you ")
+    speak("i am jarvis sir, how may i help you ")
 
 def takeCommand():
     r=sr.Recognizer()
@@ -42,7 +42,7 @@ def takeCommand():
         return "None"
     return query
 def sendEmail(to,content):
-    server=smtplib.SMTP('smtp.gmail.com',587)
+    server=smtplib.SMTP('smtp.gmail.com',587) #this is a port number 587
     server.ehlo()
     server.starttls()
     server.login('akramnadim1999@gmail.com', 'nadimakram@901')
@@ -56,7 +56,7 @@ if __name__ == "__main__":
     # while True:  #this will continuosly run the while loop till end
     if 1:
         
-        query= takeCommand().lower()
+        query= takeCommand().lower()   #this fun take input and gives result from wikipedia 
         if 'wikipedia' in query:
             speak('please wait ,searching wikipedia...')
             query=query.replace("wikipedia","")
@@ -72,6 +72,8 @@ if __name__ == "__main__":
         elif 'google' in query:
             speak("according to google")
             webbrowser.open('www.google.com')
+        elif 'geeksforgeeks' in query:
+            webbrowser.open('geeksforgeeks')             #we may add millions of sites in this AI project and enjoy unlimited experience
         elif 'play music' in query:
             music_dir='D:\\music'
             songs= os.listdir(music_dir)
